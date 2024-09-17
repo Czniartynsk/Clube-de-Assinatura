@@ -30,33 +30,87 @@
   --medium: 500;
   --regular: 400;
 
-  --title-lg: var(--bold) 1.75rem var(--ff);
-  --title-md: var(--bold) 2.5rem var(--ff);
-  --title-sm: var(--bold) 1.5rem var(--ff);
-  --title-xs: var(--bold) 1rem var(--ff);
+  --title-lg: 1.75rem;
+  --title-md: 2.5rem;
+  --title-sm: 1.5rem;
+  --title-xs: 1rem;
 
-  --subtitle: 500 1rem/1.4 var(--ff);
-  --body-lg: .875rem;
-  --body-md: 400 .875rem/1.4 var(--ff);
+  --subtitle: var(--medium) 1rem/1.4 var(--ff);
+  --body-lg: var(--regular) .875rem/1.4 var(--ff);
+  --body-md: var(--regular) .875rem/1.4 var(--ff);
   --body-sm: .875rem;
-  --body-xs: 400 .75rem/1.4 var(--ff);
+  --body-xs: var(--regular) .75rem/1.4 var(--ff);
 
-  --button: var(--bold) .875rem var(--ff);
+  --button: .875rem;
   --link: .875rem;
-  --tag: .625rem;
+}
+
+html {
+  font-family: var(--ff);
+  font-weight: var(--bold);
+}
+
+body {
+  background-color: var(--shape-bg);
+  color: var(--text-body)
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.app {
+  max-width: 90rem;
+  margin-inline: auto;
+  position: relative;
+  overflow: hidden;
+  padding-top: 1.25rem;
+  
+  &::before {
+    content: "";
+    background: url(../assets/images/hero-background.png) no-repeat center/cover;
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    opacity: 0;
+    bottom: 4rem;
+
+    animation: appear 2.5s forwards;
+  }
+}
+
+.container {
+  padding-inline: 1.25rem;
+  max-width: 75rem;
+  height: 29rem;
 }
 
 @media (width >= 90em) {
   :root {
-    --title-lg: var(--bold) 3rem var(--ff);
-    --title-sm: var(--bold) 2rem var(--ff);
+    --title-lg: 3rem;
+    --title-sm: 2rem;
 
-    --subtitle: 500 2rem/2 var(--ff);
-    --body-lg: 1.25rem;
-    --body-md: 400 1rem/1.4 var(--ff);
-    --body-sm: .875rem;
+    --subtitle: var(--medium) 2rem/2 var(--ff);
+    --body-lg: var(--regular) 1.25rem/1.4 var(--ff);
+    --body-md: var(--regular) 1rem/1.4 var(--ff);
+  }
 
-    --link: .875rem;
-    --tag: .625rem;
+  .app {
+    padding-top: 3.5rem;
+  }
+
+  .container {
+    max-width: 75rem;
+    width: 100%;
+    margin-inline: auto;
+
+    height: 59.25rem;
+  }
+}
+
+@keyframes appear {
+  to {
+    opacity: 1;
   }
 }

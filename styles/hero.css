@@ -1,0 +1,155 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  opacity: 1;
+
+  margin-bottom: 3rem;
+
+  & img:nth-child(1) {
+    height: 2.75rem;
+    width: auto;
+  }
+  
+  .btn {
+    padding: .75rem 1.25rem;
+    background-color: var(--pink-dark);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: .5rem;
+    overflow: hidden;
+
+    position: relative;
+
+    & strong {
+      z-index: 2;
+      font-size: var(--button);
+    }
+
+    &:hover::before {
+      scale: 3;
+    }
+
+    &::before {
+      content: "";
+        
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+
+      background-color: var(--pink-base);
+
+      position: absolute;
+      /* inset: 0; */
+      scale: 0;
+      z-index: 1;
+
+      transition: scale 400ms linear;
+    }
+  }
+}
+
+header {
+  display: grid;
+  gap: 1rem;
+  text-align: center;
+  
+  & h1 {
+    display: block;
+    margin-inline: auto;
+    width: 20.93rem;
+    font-size: var(--title-lg);
+    color: var(--text-title);
+    opacity: 0;
+
+    animation: appear 2.5s forwards;
+  }
+
+  & span {
+    font: var(--body-lg);
+    margin-inline: auto;
+    opacity: 0;
+    display: block;
+    animation: appear 1.5s 800ms forwards;
+  }
+}
+
+.container .blur {
+
+    &:nth-child(3){
+      /* Ellipse 1 */
+      position: absolute;
+      width: 491px;
+      height: 491px;
+      left: calc(50% - 491px/2 + 696.5px);
+      top: 722px;
+      
+      background: #3F0F41;
+      filter: blur(334px);
+    }
+
+    &:nth-child(4) {
+      /* Ellipse 2 */
+      position: absolute;
+      width: 376px;
+      height: 376px;
+      left: calc(50% - 376px/2 - 791px);
+      top: 494px;
+      
+      background: #3F0F41;
+      filter: blur(254px);
+    }
+
+    &:nth-child(5) {
+      /* Ellipse 3 */
+      position: absolute;
+      width: 538px;
+      height: 538px;
+      left: calc(50% - 538px/2 - 219px);
+      top: 987px;
+      
+      background: #3F0F41;
+      filter: blur(434px);
+    }
+
+    &:nth-child(6) {
+      /* Ellipse 4 */
+      position: absolute;
+      width: 241px;
+      height: 241px;
+      left: calc(50% - 241px/2 + 696.5px);
+      top: 366px;
+      
+      background: #3F0F41;
+      filter: blur(234px);
+    }
+
+}
+
+@media (width >= 90em) {
+  nav {
+    margin-bottom: 10.25rem;
+
+    & img:nth-child(2) {
+      height: 2.56rem;
+      width: auto;
+    }
+  }
+
+  header {
+    margin: .5rem;
+    gap: 2rem;
+
+    /* margin-top: 10.25rem; */
+    & h1 {
+      width: 41rem;
+    }
+    & span {
+      width: 35.5rem;
+    }
+  }
+}

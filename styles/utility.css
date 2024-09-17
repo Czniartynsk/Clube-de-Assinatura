@@ -1,0 +1,15 @@
+.tag {
+  font-size: var(--tag);
+  letter-spacing: 0.05;
+  text-transform: uppercase;
+}
+
+.desktop-only {
+  display: none;
+}
+
+@media (width >= 90em) {
+  .desktop-only {
+    display: initial;
+  }
+}
