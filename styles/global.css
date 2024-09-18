@@ -2,6 +2,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  /* reseta os valores da font */
+  font: inherit;
+
+  --webkit-font-smoothing: antialiased;
+  --mos--osx-smoothing: grayscale;
 }
 
 :root {
@@ -52,7 +58,8 @@ html {
 
 body {
   background-color: var(--shape-bg);
-  color: var(--text-body)
+  color: var(--text-body);
+  overflow-x: hidden;
 }
 
 a {
@@ -61,10 +68,63 @@ a {
 }
 
 .app {
+  overflow: hidden;
+  
+  & .blur {
+    &:nth-child(3){
+      /* Ellipse 1 */
+      position: absolute;
+      width: 491px;
+      height: 491px;
+      left: calc(50% - 491px/2 + 696.5px);
+      top: 722px;
+      
+      background: #3F0F41;
+      filter: blur(334px);
+    }
+
+    &:nth-child(4) {
+      /* Ellipse 2 */
+      position: absolute;
+      width: 376px;
+      height: 376px;
+      left: calc(50% - 376px/2 - 791px);
+      top: 494px;
+      
+      background: #3F0F41;
+      filter: blur(254px);
+    }
+
+    &:nth-child(5) {
+      /* Ellipse 3 */
+      position: absolute;
+      width: 538px;
+      height: 538px;
+      left: calc(50% - 538px/2 - 219px);
+      top: 987px;
+      
+      background: #3F0F41;
+      filter: blur(434px);
+    }
+
+    &:nth-child(6) {
+      /* Ellipse 4 */
+      position: absolute;
+      width: 241px;
+      height: 241px;
+      left: calc(50% - 241px/2 + 696.5px);
+      top: 366px;
+      
+      background: #3F0F41;
+      filter: blur(234px);
+    }
+  }
+}
+
+.hero {
   max-width: 90rem;
   margin-inline: auto;
   position: relative;
-  overflow: hidden;
   padding-top: 1.25rem;
   
   &::before {
@@ -82,8 +142,14 @@ a {
 
 .container {
   padding-inline: 1.25rem;
-  max-width: 75rem;
+  /* max-width: 75rem; */
   height: 29rem;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 @media (width >= 90em) {
@@ -96,13 +162,13 @@ a {
     --body-md: var(--regular) 1rem/1.4 var(--ff);
   }
 
-  .app {
+  .hero {
     padding-top: 3.5rem;
   }
 
   .container {
-    max-width: 75rem;
-    width: 100%;
+    max-width: 70rem;
+    /* width: 100%; */
     margin-inline: auto;
 
     height: 59.25rem;

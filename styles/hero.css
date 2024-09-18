@@ -78,58 +78,6 @@ header {
   }
 }
 
-.container .blur {
-
-    &:nth-child(3){
-      /* Ellipse 1 */
-      position: absolute;
-      width: 491px;
-      height: 491px;
-      left: calc(50% - 491px/2 + 696.5px);
-      top: 722px;
-      
-      background: #3F0F41;
-      filter: blur(334px);
-    }
-
-    &:nth-child(4) {
-      /* Ellipse 2 */
-      position: absolute;
-      width: 376px;
-      height: 376px;
-      left: calc(50% - 376px/2 - 791px);
-      top: 494px;
-      
-      background: #3F0F41;
-      filter: blur(254px);
-    }
-
-    &:nth-child(5) {
-      /* Ellipse 3 */
-      position: absolute;
-      width: 538px;
-      height: 538px;
-      left: calc(50% - 538px/2 - 219px);
-      top: 987px;
-      
-      background: #3F0F41;
-      filter: blur(434px);
-    }
-
-    &:nth-child(6) {
-      /* Ellipse 4 */
-      position: absolute;
-      width: 241px;
-      height: 241px;
-      left: calc(50% - 241px/2 + 696.5px);
-      top: 366px;
-      
-      background: #3F0F41;
-      filter: blur(234px);
-    }
-
-}
-
 @media (width >= 90em) {
   nav {
     margin-bottom: 10.25rem;

@@ -1,0 +1,109 @@
+.about {
+  width: 100%;
+  margin-inline: auto;
+  margin-top: 96px;
+  /* sticky porque precisava ser diferente de static para funcionar o z-index */
+  position: sticky;
+  z-index: 5;
+
+  display: grid;
+  grid-template-areas: 
+  "book book"
+  "text text"
+  "ouija crystal"
+  ;
+
+  & div {
+    transition: scale 400ms, rotate 400ms;
+
+    & img {
+      scale: 0;
+      animation: growDown 400ms linear forwards;
+    }
+  }
+
+  & div:nth-child(1) {
+    grid-area: book;
+    margin-inline: auto;
+    width: 5.5rem;
+    aspect-ratio: 1/1;
+
+    & img {
+      rotate: 20.76deg;
+    }
+  }
+
+  & h2 {
+    font: var(--subtitle);
+    text-align: center;
+    grid-column: 1/4;
+    grid-area: text;
+    color: #E2E7E980;
+  }
+  
+  & div:nth-child(3) {
+    grid-area: ouija;
+    width: 5rem;
+    aspect-ratio: 1/1;
+
+    & img {
+      rotate: 99.47deg;  
+    }
+  }
+
+  & div:nth-child(4) {
+    grid-area: crystal;
+    margin-left: auto;
+    width: 4.5rem;
+    aspect-ratio: 1/1;
+
+    & img {
+      rotate: -14.48deg;
+    }
+  } 
+
+  &:hover {
+    & div:nth-child(1):hover,
+    & div:nth-child(3):hover,
+    & div:nth-child(4):hover {
+      scale: 1.1;
+      rotate: 10deg;
+    }
+
+    & div:nth-child(1) img {
+      animation: growUp 400ms linear forwards;
+    }
+
+    & div:nth-child(3) img {
+      animation: growUp 400ms 500ms linear forwards;
+    }
+
+    & div:nth-child(4) img {
+      animation: growUp 400ms 1s linear forwards;
+    }
+
+    & h2 {
+      color: var(--text-body);
+
+      & span {
+        color: var(--blue-light);
+      }
+    }
+  }
+
+}
+
+@media (width >= 90em) {
+  .about {
+    max-width: 75rem;
+  }
+}
+
+@keyframes growUp {
+  50% {
+    scale: 1.05;
+  }
+  100% {
+    scale: 1;
+  }
+}
