@@ -14,11 +14,12 @@
   ;
 
   & div {
-    transition: scale 400ms, rotate 400ms;
+    /* transition: scale 400ms, rotate 400ms; */
 
     & img {
       scale: 0;
-      animation: growDown 400ms linear forwards;
+      transition: scale 400ms linear;
+      /* animation: growDown 400ms linear forwards; */
     }
   }
 
@@ -39,6 +40,14 @@
     grid-column: 1/4;
     grid-area: text;
     color: #E2E7E980;
+
+    & span, & span strong {
+      transition: color 300ms linear;
+    }
+    
+    /* & strong {
+      transition: color 400ms linear;
+    } */
   }
   
   & div:nth-child(3) {
@@ -63,6 +72,10 @@
   } 
 
   &:hover {
+    & div img {
+      scale: 1;
+    }
+
     & div:nth-child(1):hover,
     & div:nth-child(3):hover,
     & div:nth-child(4):hover {
@@ -71,22 +84,44 @@
     }
 
     & div:nth-child(1) img {
-      animation: growUp 400ms linear forwards;
+      animation: growUp 200ms 300ms;
+      transition: scale 300ms linear;
     }
 
     & div:nth-child(3) img {
-      animation: growUp 400ms 500ms linear forwards;
+      animation: growUp 200ms 800ms;
+      transition: scale 300ms 500ms linear;
     }
 
     & div:nth-child(4) img {
-      animation: growUp 400ms 1s linear forwards;
+      animation: growUp 200ms 1.3s;
+      transition: scale 300ms 1s linear;
     }
 
     & h2 {
       color: var(--text-body);
 
-      & span {
+      & strong {
         color: var(--blue-light);
+      }
+
+      & span:nth-child(1) {
+        transition: color 300ms linear;
+        & strong {
+          transition: color 300ms linear;
+        }
+      }
+      & span:nth-child(2) {
+        transition: color 300ms 500ms linear;
+        & strong {
+          transition: color 300ms 500ms linear;
+        }
+      }
+      & span:nth-child(3) {
+        transition: color 300ms 1s linear;
+        & strong {
+          transition: color 300ms 1s linear;
+        }
       }
     }
   }
@@ -100,6 +135,9 @@
 }
 
 @keyframes growUp {
+  0% {
+    scale: 1;
+  }
   50% {
     scale: 1.05;
   }
