@@ -1,5 +1,7 @@
 .about {
-  width: 100%;
+  /* width: 100%;
+  width: 20.93rem; */
+  padding-inline: 1.25rem;
   margin-inline: auto;
   margin-top: 96px;
   /* sticky porque precisava ser diferente de static para funcionar o z-index */
@@ -26,7 +28,7 @@
   & div:nth-child(1) {
     grid-area: book;
     margin-inline: auto;
-    width: 5.5rem;
+    width: 2.5rem;
     aspect-ratio: 1/1;
 
     & img {
@@ -34,11 +36,14 @@
     }
   }
 
+  & .text-about {
+    grid-column: 1/4;
+    grid-area: text;
+  }
+
   & h2 {
     font: var(--subtitle);
     text-align: center;
-    grid-column: 1/4;
-    grid-area: text;
     color: #E2E7E980;
 
     & span, & span strong {
@@ -52,7 +57,7 @@
   
   & div:nth-child(3) {
     grid-area: ouija;
-    width: 5rem;
+    width: 2.5rem;
     aspect-ratio: 1/1;
 
     & img {
@@ -63,7 +68,7 @@
   & div:nth-child(4) {
     grid-area: crystal;
     margin-left: auto;
-    width: 4.5rem;
+    width: 2.5rem;
     aspect-ratio: 1/1;
 
     & img {
@@ -131,6 +136,14 @@
 @media (width >= 90em) {
   .about {
     max-width: 75rem;
+    /* padding-inline: 7.5rem; */
+
+    & div:nth-child(1), 
+    & div:nth-child(3), 
+    & div:nth-child(4) {
+      width: 5rem;
+    }
+     
   }
 }
 
