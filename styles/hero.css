@@ -53,7 +53,7 @@ nav {
   }
 }
 
-header {
+.main-header {
   display: grid;
   gap: 1rem;
   text-align: center;
@@ -88,7 +88,7 @@ header {
     }
   }
 
-  header {
+  .main-header {
     margin: .5rem;
     gap: 2rem;
 

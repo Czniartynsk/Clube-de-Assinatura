@@ -1,9 +1,7 @@
 .about {
-  /* width: 100%;
-  width: 20.93rem; */
   padding-inline: 1.25rem;
   margin-inline: auto;
-  margin-top: 96px;
+  margin-top: 6rem;
   /* sticky porque precisava ser diferente de static para funcionar o z-index */
   position: sticky;
   z-index: 5;
@@ -16,12 +14,11 @@
   ;
 
   & div {
-    /* transition: scale 400ms, rotate 400ms; */
+    transition: scale 400ms, rotate 400ms;
 
     & img {
       scale: 0;
       transition: scale 400ms linear;
-      /* animation: growDown 400ms linear forwards; */
     }
   }
 
@@ -49,10 +46,6 @@
     & span, & span strong {
       transition: color 300ms linear;
     }
-    
-    /* & strong {
-      transition: color 400ms linear;
-    } */
   }
   
   & div:nth-child(3) {
@@ -68,6 +61,7 @@
   & div:nth-child(4) {
     grid-area: crystal;
     margin-left: auto;
+    margin-bottom: 2rem;
     width: 2.5rem;
     aspect-ratio: 1/1;
 
@@ -136,7 +130,6 @@
 @media (width >= 90em) {
   .about {
     max-width: 75rem;
-    /* padding-inline: 7.5rem; */
 
     & div:nth-child(1), 
     & div:nth-child(3), 
@@ -144,6 +137,9 @@
       width: 5rem;
     }
      
+    & div:nth-child(4) {
+      margin-bottom: 9.375rem;
+    }
   }
 }
 
