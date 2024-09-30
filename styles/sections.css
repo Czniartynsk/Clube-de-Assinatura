@@ -51,7 +51,8 @@
             height: auto;
         }
 
-        & .book-element, 
+        & .book-element,
+        & .book-element-pin,
         & .book-element-banner, 
         & .arrow-span-2 {
             position: absolute;  
@@ -84,17 +85,40 @@
             } 
         }
 
+        & .book-element-pin {
+            bottom: .875rem;
+            left: 1rem;
+
+            opacity: 0;
+            scale: 0;
+            transition: opacity 400ms, scale 400ms;
+
+            & span {
+                transition: transform 400ms;
+            }
+            
+            & img#arrow-1 {
+                width: 2.2rem;
+                transition: transform 400ms;
+            }
+            & img#pin {
+                width: 4.68rem;
+                transition: transform 400ms, rotate 400ms;
+            }
+        }
+
         & .book-element,
-        & .book-element-banner:nth-child(5),
+        & .book-element-pin,
+        & .book-element-banner:nth-child(7),
         & .arrow-span-2 {
             z-index: -1;
         }
-        & .book-element-banner:nth-child(6) {
+        & .book-element-banner:nth-child(8) {
             z-index: -2;
         }
 
-        & .book-element-banner:nth-child(5),
-        & .book-element-banner:nth-child(6) {
+        & .book-element-banner:nth-child(7),
+        & .book-element-banner:nth-child(8) {
             width: 4.6rem;
             left: 5.4rem;
             top: .2rem;
@@ -133,17 +157,6 @@
         filter: blur(300px);
     }
 
-    /* & > .book-element {
-        position: absolute;
-        border: 1px solid red;
-
-        & span {
-            font-size: .625rem;
-            text-align: start;
-            margin-top: 0;
-        }
-
-    } */
 }
 
 .book:hover {
@@ -163,18 +176,34 @@
             transform: translate(-4.2rem, -1rem);
         }
     }
-    
+
+    & .book-element-pin {
+        scale: 1;
+        opacity: 1;
+        & span {
+            transform: translate(-6.7rem, -4.89rem);
+        }
+
+        & img#arrow-1 {
+            transform: translate(-5.1rem, -1.6rem);
+        }
+        
+        & img#pin {
+            rotate: -7.55deg;
+            transform: translate(-4.4rem, 2.2rem);
+        }
+    }
     
     & .book-element-banner {
         animation: littleJump 400ms 390ms;
     }
 
-    & .book-element-banner:nth-child(5) img {
+    & .book-element-banner:nth-child(7) img {
         rotate: 12deg;
         transform: translate(2.4rem, -2.68rem);
     }
 
-    & .book-element-banner:nth-child(6) img {
+    & .book-element-banner:nth-child(8) img {
         rotate: 22deg;
         transform: translate(5.3rem, -1.3rem);
     }
@@ -209,7 +238,10 @@
             width: 29.18rem;
             height: 38.56rem;
 
-            & .book-element-banner, & .arrow-span-2, & .book-element {
+            & .book-element ,
+            & .book-element-pin,
+            & .book-element-banner, 
+            & .arrow-span-2 {
                 & span {
                     font-size: 1rem;
                 }
@@ -224,13 +256,26 @@
                 }
             }
 
+            & .book-element-pin {
+                bottom: 2.5rem;
+                left: 3rem;
+
+                & img#arrow-1 {
+                    width: 6.56rem;
+                }
+
+                & img#pin {
+                    width: 13.875rem;
+                }
+            }
+
             & .book-element-banner {
                 width: 9.81rem;
                 height: 12.93rem;
             }
 
-            & .book-element-banner:nth-child(5),
-            & .book-element-banner:nth-child(6) {
+            & .book-element-banner:nth-child(7),
+            & .book-element-banner:nth-child(8) {
                 width: 13.81rem;
                 left: 15.5rem;
                 top: .3rem;
@@ -262,24 +307,33 @@
                 }
             }
 
-            & .book-element-banner:nth-child(5) img {
+            & .book-element-pin {
+                & span {
+                    transform: translate(-16rem, -13.46rem);
+                }
+
+                & img#arrow-1 {
+                    transform: translate(-15rem, -4.6rem);
+                }
+
+                & img#pin {
+                    rotate: -8deg;
+                    transform: translate(-13rem, 6.5rem);
+                }
+            }
+
+            & .book-element-banner:nth-child(7) img {
                 transform: translate(7.3rem, -9.8rem);
             }
 
-            & .book-element-banner:nth-child(6) img {
+            & .book-element-banner:nth-child(8) img {
                 transform: translate(15.6rem, -4.8rem);
             }
 
             & .arrow-span-2 {
-                /* animation: appear 400ms 390ms forwards; */
                 transform: translate(13.5rem, 8.8rem);
             }
         }
-
-        /* & > .book-element span {
-            color: var(--text-title);
-            font-size: 1rem;
-        } */
 
     }
 }
