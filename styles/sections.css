@@ -24,19 +24,20 @@
 
     }
 
-    & span {
+    & > span {
         display: block;
         text-align: center;
         color: var(--text-body);
         font: var(--body-md);
         margin-top: -.75rem;
+        padding-bottom: 4rem;
     }
 }
 
 .book {
     width: 23.43rem;
     height: 19.93rem;
-    margin-top: 7.125rem;
+    margin-top: 3.125rem;
     margin-inline: auto;
     
     & .book-box {
@@ -50,29 +51,70 @@
             height: auto;
         }
 
-        .book-element {
+        & .book-element, 
+        & .book-element-banner, 
+        & .arrow-span-2 {
             position: absolute;  
-            
-            & img {
-                transition: transform 400ms, rotate 400ms;
+
+            & span {
+                font-size: 0.625rem;
+                font-weight: 400;
+                display: block;
+                width: max-content;
             }
         }
 
-        & .book-element:nth-child(4) {
+        & .book-element-banner img {
+            transition: transform 400ms, rotate 400ms;
+        }
+
+        & .book-element {
+            top: 0.5rem;
+            left: 1.2rem;
+            opacity: 0;
+            transition: transform 400ms, opacity 400ms;
+            
+            & span {
+                transition: transform 400ms;
+            }
+
+            & img {
+                transition: transform 400ms;
+                width: 3.67rem;
+            } 
+        }
+
+        & .book-element,
+        & .book-element-banner:nth-child(5),
+        & .arrow-span-2 {
             z-index: -1;
         }
-        & .book-element:nth-child(5) {
+        & .book-element-banner:nth-child(6) {
             z-index: -2;
         }
 
-        & .book-element:nth-child(4),
-        & .book-element:nth-child(5) {
+        & .book-element-banner:nth-child(5),
+        & .book-element-banner:nth-child(6) {
             width: 4.6rem;
             left: 5.4rem;
             top: .2rem;
 
             & img {
                 height: 11.25rem;
+            }
+        }
+
+        & .arrow-span-2 {
+            bottom: 0.8rem;
+            right: .5rem;
+
+            opacity: 0;
+            transition: transform 400ms, opacity 400ms;
+            
+            & img {
+                width: 3.06rem;
+                margin-left: 3.5rem;
+                margin-bottom: .368rem;
             }
         }
     }
@@ -91,9 +133,9 @@
         filter: blur(300px);
     }
 
-    & > .book-element {
+    /* & > .book-element {
         position: absolute;
-        border: solid red;
+        border: 1px solid red;
 
         & span {
             font-size: .625rem;
@@ -101,22 +143,46 @@
             margin-top: 0;
         }
 
-    }
+    } */
 }
 
 .book:hover {
     & .book-element {
+        opacity: 1;
+        animation: appear 400ms 390ms forwards;
+
+        & span {
+            transform: translate(-7rem, -2.3rem);
+            opacity: 1;
+            scale: 1;
+        }
+        
+        & img {
+            opacity: 1;
+            scale: 1;
+            transform: translate(-4.2rem, -1rem);
+        }
+    }
+    
+    
+    & .book-element-banner {
         animation: littleJump 400ms 390ms;
     }
 
-    & .book-element:nth-child(4) img {
+    & .book-element-banner:nth-child(5) img {
         rotate: 12deg;
         transform: translate(2.4rem, -2.68rem);
     }
 
-    & .book-element:nth-child(5) img {
+    & .book-element-banner:nth-child(6) img {
         rotate: 22deg;
         transform: translate(5.3rem, -1.3rem);
+    }
+
+    & .arrow-span-2 {
+        animation: appear 400ms 390ms forwards;
+        opacity: 1;
+        transform: translate(5rem, 3.7rem);
     }
 }
 
@@ -128,29 +194,43 @@
             width: 5rem;
         }
 
-        & span {
+        & > span {
             margin-top: -1rem;
+            padding-bottom: 5.5rem;
         }
     }
 
     .book {
         width: 90rem;
         height: 57.5rem;
-        margin-top: 13.875rem;
+        margin-top: 8.375rem;
 
         & .book-box {
             width: 29.18rem;
             height: 38.56rem;
 
-            & .book-element {
-                position: absolute;
-                width: 9.81rem;
-                height: 12.93rem;
-
+            & .book-element-banner, & .arrow-span-2, & .book-element {
+                & span {
+                    font-size: 1rem;
+                }
             }
 
-            & .book-element:nth-child(4),
-            & .book-element:nth-child(5) {
+            & .book-element {
+                top: 1.5rem;
+                left: 3rem;
+                    
+                & img {
+                    width: 10.93rem;
+                }
+            }
+
+            & .book-element-banner {
+                width: 9.81rem;
+                height: 12.93rem;
+            }
+
+            & .book-element-banner:nth-child(5),
+            & .book-element-banner:nth-child(6) {
                 width: 13.81rem;
                 left: 15.5rem;
                 top: .3rem;
@@ -160,32 +240,66 @@
                 }
             }
 
-            
+            & .arrow-span-2 {
+                bottom: 2.5rem;
+                right: 1.25rem;
+
+                & img {
+                    width: 9.06rem;
+                    margin-left: 5.2rem;
+                    margin-bottom: 1.09rem;
+                }
+            }
         }
 
         &:hover {
-            & .book-element:nth-child(4) img {
+            & .book-element {
+                & span {
+                    transform: translate(-16rem, -5.46rem);
+                }
+                & img {
+                    transform: translate(-11.5rem, -3rem);
+                }
+            }
+
+            & .book-element-banner:nth-child(5) img {
                 transform: translate(7.3rem, -9.8rem);
             }
 
-            & .book-element:nth-child(5) img {
+            & .book-element-banner:nth-child(6) img {
                 transform: translate(15.6rem, -4.8rem);
+            }
+
+            & .arrow-span-2 {
+                /* animation: appear 400ms 390ms forwards; */
+                transform: translate(13.5rem, 8.8rem);
             }
         }
 
-        & > .book-element span {
+        /* & > .book-element span {
             color: var(--text-title);
             font-size: 1rem;
-        }
+        } */
 
     }
 }
 
 @keyframes littleJump {
+    /* A animação move o container que está envolvendo os elementos que estão sendo movidos pelo transition */
     50% {
         transform: translate(2px, -1px);
     }
     100% {
         transform: translate(0, 0);
+    }
+}
+
+@keyframes appear {
+    /* Essa animação movimenta o elemento que está sendo movido */
+    50% {
+        scale: 1.01;
+    }
+    100% {
+        scale: 1;
     }
 }
