@@ -67,6 +67,14 @@ a {
   color: inherit;
 }
 
+h2 {
+  font-size: var(--title-sm);
+}
+
+ul[role="list"] {
+  list-style: none;
+}
+
 .app {
   overflow: hidden;
   
@@ -136,7 +144,7 @@ a {
     opacity: 0;
     bottom: 4rem;
 
-    animation: appear 2.5s forwards;
+    animation: heroAppear 2.5s forwards;
   }
 }
 
@@ -175,7 +183,7 @@ img {
   }
 }
 
-@keyframes appear {
+@keyframes heroAppear {
   to {
     opacity: 1;
   }

@@ -66,7 +66,7 @@ nav {
     color: var(--text-title);
     opacity: 0;
 
-    animation: appear 2.5s forwards;
+    animation: heroAppear 2.5s forwards;
   }
 
   & span {
@@ -74,7 +74,7 @@ nav {
     margin-inline: auto;
     opacity: 0;
     display: block;
-    animation: appear 1.5s 800ms forwards;
+    animation: heroAppear 1.5s 800ms forwards;
   }
 }
 
@@ -101,3 +101,5 @@ nav {
     }
   }
 }
+
+
