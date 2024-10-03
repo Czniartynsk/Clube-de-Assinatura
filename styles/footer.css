@@ -1,0 +1,120 @@
+.rodape {
+  height: 25.93rem;
+  background: url(../assets/images/book-trace-bg-mobile.png) no-repeat center/contain;
+  padding: 6.125rem 2rem 2.375rem;
+
+  & footer {
+    & > div:nth-child(1) {
+      & > a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        & img:nth-child(1) {
+          width: 48px;
+          height: 30px;
+        }
+        & img:nth-child(2) {
+          width: 109px;
+          height: 29px;
+        }
+      }
+
+      & hr {
+        border: 1px solid var(--shape-stroke);
+        margin-block: .75rem;
+      }
+  
+      & .social-links {
+        display: flex;
+        justify-content: space-around;
+        & > div {
+          width: 2.5rem;
+          height: 2.5rem;
+          padding: .5rem;
+          border-radius: 50%;
+  
+          transition: background-color 400ms;
+          
+          & svg path {
+            fill: var(--blue-light);
+            transition: fill 400ms;
+          }
+  
+          &:hover {
+            background-color: var(--shape-stroke);
+  
+            & svg path {
+                fill: var(--text-body);
+              }
+          }
+        }
+      }
+    }
+
+
+
+    & > div:nth-child(2) {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+
+      & ul {
+        & li:first-child {
+          margin-bottom: 1.25rem;
+          font-size: var(--title-xs);
+        }
+        & li + li {
+          margin-top: .75rem;
+          & a {
+            font-size: var(--link);
+            font-weight: var(--medium);
+            color: var(--blue-light);
+
+            transition: color 400ms;
+
+            &:hover {
+              color: var(--text-body);
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
+
+@media (width >= 90em) {
+  .rodape {
+    background: url(../assets/images/book-trace-background.png) no-repeat center/cover;
+    padding: unset;
+    padding: 10.625rem 10rem 5rem;
+    width: 90rem;
+    margin-inline: auto;
+    
+    & footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      & div:nth-child(1) {
+        & a {
+          & img:nth-child(1) {
+            width: 5rem;
+            height: 3.18rem;
+          }
+        
+          & img:nth-child(2) {
+            width: 11.31rem;
+            height: 3rem;
+          }
+        }
+      }
+
+      & div:nth-child(2) {
+        margin-top: 0;
+      }
+    }
+
+  }
+}
